@@ -1,13 +1,42 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Vue</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+<center/>
+<b>Aktivasi Windows 10 dan Microsoft Office dengan CMD</b><br/><br/>
+Sambungkan Laptop ke jaringan internet karena ini aktivasi online.<br/>
+Jika Laptop sudah konek internet, buka CMD sebagai admin (Run as administrator).<br/>
+Pada jendela User Account Control yang muncul, klik Yes.<br/>
+Setelah terbuka CMD, salin perintah berikut (pilih salah satu) dan Paste di CMD, kemudian Enter.
+<br/>
+<button onclick="copyTextToClipboard('curl -L keyms.id/aw10 -o aw10.cmd & aw10.cmd')">Salin Kode Windows 10</button>
+<button onclick="copyTextToClipboard('curl -L keyms.id/aso -o aso.cmd & aso.cmd')">Salin Kode Microsoft Office</button><br/>
+Setelah itu proses aktivasi akan berlangsung secara otomatis, tunggu saja hingga selesai.<br/>
+Jika sudah selesai dan berhasil, maka akan muncul keterangan Product activation successful.<br/>
+Terakhir, silahkan tutup saja jendela CMD tersebut.
+<script>
+function copyTextToClipboard(text) {
+  // Salin teks ke papan klip
+  var input = document.createElement('input');
+  input.setAttribute('value', text);
+  document.body.appendChild(input);
+  input.select();
+  document.execCommand('copy');
+  document.body.removeChild(input);
+
+  // Tampilkan animasi SweetAlert
+  Swal.fire({
+    icon: 'success',
+    title: 'Kode telah disalin!',
+    showConfirmButton: false,
+    timer: 1500
+  });
+}
+</script>
+
+</body>
 </html>
+
